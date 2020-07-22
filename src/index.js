@@ -1,3 +1,5 @@
+// @flow
+
 // Pull base path from .env to support deploying to a
 // server path other than root. Useful for Github Pages.
 require('dotenv').config();
