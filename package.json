@@ -15,7 +15,6 @@
     "parcel"
   ],
   "license": "ISC",
-  "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.7.5",
     "react": "^16.12.0",
@@ -30,6 +29,7 @@
     "@babel/preset-react": "^7.7.4",
     "eslint": "^6.7.2",
     "eslint-plugin-react": "^7.17.0",
+    "gh-pages": "^3.1.0",
     "husky": "^3.1.0",
     "parcel": "^2.0.0-alpha.3.2",
     "prettier": "^1.19.1"
@@ -38,6 +38,8 @@
     "lint": "eslint src",
     "prettier": "prettier --write \"src/**/*.{js,json}\"",
     "start": "parcel index.html",
+    "build": "rm -rf ./dist; parcel build index.html",
+    "deploy": "yarn build && yarn gh-pages -d ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
