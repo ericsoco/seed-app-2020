@@ -37,8 +37,8 @@
   "scripts": {
     "lint": "eslint src",
     "prettier": "prettier --write \"src/**/*.{js,json}\"",
-    "start": "parcel index.html",
-    "build": "rm -rf ./dist; parcel build index.html",
+    "start": "parcel serve ./index.html",
+    "build": "rm -rf ./dist; parcel build ./index.html",
     "deploy": "yarn build && yarn gh-pages -d ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
