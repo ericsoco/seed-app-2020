@@ -1,3 +1,7 @@
+// Pull base path from .env to support deploying to a
+// server path other than root. Useful for Github Pages.
+require('dotenv').config();
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -16,7 +20,7 @@ const store = createStore(rootReducer, initialState);
 render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename={`/${process.env.BASE_PATH}`}>
         <Switch>
           <Route path={'/'} exact component={App} />
           <Route component={FourOhFour} />
